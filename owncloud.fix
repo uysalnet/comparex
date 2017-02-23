@@ -1,0 +1,17 @@
+$ sudo -u www-data php occ maintenance:mode --on
+$ sudo -u www-data php occ maintenance:mode --off
+
+$ sudo -u www-data php occ upgrade
+
+$ sudo -u www-data php occ upgrade --skip-migration-test
+
+$ sudo -u www-data php occ upgrade --dry-run
+
+#scan new files
+sudo -u www-data php /var/www/owncloud/occ files:scan --all
+
+
+#create db
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+CREATE DATABASE IF NOT EXISTS owncloud;
+GRANT ALL PRIVILEGES ON owncloud.* TO 'username'@'localhost' IDENTIFIED BY 'password';
